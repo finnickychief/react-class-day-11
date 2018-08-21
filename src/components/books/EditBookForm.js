@@ -40,7 +40,7 @@ class EditBookForm extends React.Component {
     };
 
     updateBook(updatedBook, dispatch);
-    this.props.history.push('/');
+    this.props.history.push('/books/');
   };
 
   render() {

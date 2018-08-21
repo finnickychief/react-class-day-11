@@ -13,21 +13,22 @@ class App extends Component {
       <Router>
         <div className="App">
           <Navbar />
-          <Route
-            path="/books"
-            render={props => {
-              return (
-                <BookProvider>
+          <BookProvider>
+            <Route
+              path="/books"
+              render={props => {
+                return (
                   <BookConsumer>
                     {store => {
                       const { dispatch } = store;
                       return <BookList dispatch={dispatch} store={store} />;
                     }}
                   </BookConsumer>
-                </BookProvider>
-              );
-            }}
-          />
+                );
+              }}
+            />{' '}
+          </BookProvider>
+
           <header className="App-header">
             <h1 className="App-title">Welcome to React</h1>
           </header>
