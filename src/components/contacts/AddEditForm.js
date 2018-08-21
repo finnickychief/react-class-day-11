@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Input from './Input';
 import PropTypes from 'prop-types';
-import { updateContact } from '../actions';
+import { updateContact } from '../../actions/contactActions';
 
 class AddEditForm extends Component {
   constructor(props) {
@@ -26,11 +26,11 @@ class AddEditForm extends Component {
     const updatedContact = { id, name, email, phone, company };
 
     updateContact(id, updatedContact, this.props.dispatch);
-    this.props.history.push('/');
+    this.props.history.push('/contacts/');
   };
   componentDidMount() {
     const currentContact = this.props.contacts.filter(
-      contact => contact.id == this.props.match.params.id
+      contact => contact.id === Number(this.props.match.params.id)
     )[0];
     this.setState({ ...currentContact });
   }

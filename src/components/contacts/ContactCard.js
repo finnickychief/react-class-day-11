@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { deleteContact } from '../actions';
+import { deleteContact } from '../../actions/contactActions';
 
 /*
   Create a contact card to represent each person.
@@ -20,7 +20,7 @@ export default class ContactCard extends Component {
   };
 
   editHandler = () => {
-    this.props.history.push('/addEditForm/' + this.props.contact.id);
+    this.props.history.push('/contacts/addEditForm/' + this.props.contact.id);
   };
 
   render() {

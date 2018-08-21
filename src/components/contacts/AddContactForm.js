@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Input from './Input';
-import PropTypes from 'prop-types';
-import { addContact } from '../actions';
+import { addContact } from '../../actions/contactActions';
 
 class AddContactForm extends Component {
   constructor(props) {
@@ -24,7 +23,7 @@ class AddContactForm extends Component {
 
     addContact(newContact, this.props.dispatch);
 
-    this.props.history.push('/');
+    this.props.history.push('/contacts/');
   };
 
   render() {
