@@ -1,8 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Book from './Book';
-import { UPDATE_BOOK } from '../types';
-import { updateBook } from '../actions';
+
+import { updateBook } from '../../actions/bookActions';
 
 class EditBookForm extends React.Component {
   constructor(props) {

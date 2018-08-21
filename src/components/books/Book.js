@@ -1,6 +1,5 @@
 import React from 'react';
-import { DELETE_BOOK, CHANGE_ROUTE } from '../types';
-import { deleteBook } from '../actions';
+import { deleteBook } from '../../actions/bookActions';
 
 class Book extends React.Component {
   deleteHandler = dispatch => {
@@ -8,7 +7,7 @@ class Book extends React.Component {
   };
 
   editHandler = dispatch => {
-    this.props.history.push('/editBook/' + this.props.book.id);
+    this.props.history.push('/books/editBook/' + this.props.book.id);
   };
 
   render() {

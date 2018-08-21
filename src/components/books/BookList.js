@@ -2,21 +2,19 @@ import React from 'react';
 
 import Books from './Books';
 import AddBookForm from './AddBookForm';
-import Navbar from './Navbar';
+//import Navbar from './Navbar';
 import EditBookForm from './EditBookForm';
-import { Consumer } from '../context';
 import { Route, Switch } from 'react-router-dom';
 
 class BookList extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
         <Switch>
-          <Route exact path="/" component={Books} />
-          <Route path="/addBook" component={AddBookForm} />
+          <Route exact path="/books/" component={Books} />
+          <Route path="/books/addBook" component={AddBookForm} />
           <Route
-            path="/editBook/:id"
+            path="/books/editBook/:id"
             render={props => (
               <EditBookForm
                 {...props}

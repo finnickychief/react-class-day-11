@@ -1,6 +1,6 @@
 import React from 'react';
 import Book from './Book';
-import { Consumer } from '../context';
+import { BookConsumer } from '../../context/bookContext';
 
 export default props => {
   const divStyle = {
@@ -10,7 +10,7 @@ export default props => {
     padding: '10px'
   }; // Alternate way to do styling in JS
   return (
-    <Consumer>
+    <BookConsumer>
       {store => {
         const { dispatch } = store;
 
@@ -27,6 +27,6 @@ export default props => {
           </div>
         );
       }}
-    </Consumer>
+    </BookConsumer>
   );
 };

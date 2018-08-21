@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import uuid from 'uuid';
 import PropTypes from 'prop-types';
 
-import { Consumer } from '../context';
-import { CHANGE_ROUTE, ADD_BOOK } from '../types';
-import { createBook } from '../actions';
+import { BookConsumer } from '../../context/bookContext';
+import { createBook } from '../../actions/bookActions';
 
 class AddBookForm extends Component {
   constructor(props) {
@@ -37,12 +36,12 @@ class AddBookForm extends Component {
     // dispatch(action);
 
     createBook(newBook, dispatch);
-    this.props.history.push('/');
+    this.props.history.push('/books/');
   };
 
   render() {
     return (
-      <Consumer>
+      <BookConsumer>
         {store => {
           const { dispatch } = store;
           return (
@@ -97,7 +96,7 @@ class AddBookForm extends Component {
             </div>
           );
         }}
-      </Consumer>
+      </BookConsumer>
     );
   }
 }
